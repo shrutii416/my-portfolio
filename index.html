@@ -1,16 +1,21 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shruti Gaikwad | My Portfolio</title>
+    <title>Shruti Gaikwad | Portfolio</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
@@ -18,174 +23,241 @@
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- NAVIGATION BAR -->
     <header class="navbar">
-        <a href="#home" class="logo">My<span>Portfolio.</span></a>
 
-        <nav aria-label="Main navigation">
+        <a href="#home" class="logo">Shruti<span>.</span></a>
+
+        <!-- Mobile Menu -->
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <nav class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
+
     </header>
 
-    <!-- Home / Hero Section -->
-    <section class="hero" id="home">
 
-        <div class="hero-text">
+    <!-- HOME SECTION -->
+    <section class="home" id="home">
+
+        <div class="home-content">
+
             <p class="welcome">WELCOME TO MY PORTFOLIO</p>
 
-            <h1>
-                Hi, I'm <span>Shruti Shrikant Gaikwad</span>
-            </h1>
+            <h1>Hi, I'm <span>Shruti Gaikwad</span></h1>
 
             <h2>Aspiring Web Developer</h2>
 
-            <p class="description">
-                I love creating beautiful and user-friendly websites.
-                I am passionate about learning new technologies
-                and turning creative ideas into reality.
+            <p>
+                I am a Computer Science Engineering student who loves
+                learning new technologies and creating beautiful websites.
             </p>
 
-            <a href="#about" class="btn">Explore My Portfolio</a>
+            <a href="#projects" class="btn">Explore My Work</a>
+
+            <div class="social-icons">
+
+                <a href="https://www.linkedin.com/in/shruti416/"
+                   target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="https://github.com/shrutii416"
+                   target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="mailto:gaikwadshruti237@gmail.com"
+                   aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="profile-container">
-            <div class="profile-glow"></div>
-
-            <img
-                src="profile.jpg"
-                alt="Profile photo of Shruti Gaikwad"
-                class="profile-img"
-            >
+        <div class="home-image">
+            <img src="profile.jpg" alt="Shruti Gaikwad profile photo">
         </div>
 
     </section>
 
-    <!-- About Me Section -->
-    <section class="section" id="about">
 
-        <p class="section-label">GET TO KNOW ME</p>
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
 
-        <h2 class="section-title">
-            About <span>Me</span>
-        </h2>
+        <h2 class="section-title">About <span>Me</span></h2>
 
-        <div class="about-card">
-
-            <h3>Hello! I'm Shruti Shrikant Gaikwad 👋</h3>
+        <div class="about-content">
 
             <p>
-                I am a passionate student and aspiring web developer
-                interested in creating modern and creative websites.
-                I enjoy learning new skills, exploring technology,
-                and working on projects that solve real-world problems.
+                Hello! I'm Shruti Shrikant Gaikwad, a Computer Science
+                Engineering student and an aspiring web developer.
             </p>
 
             <p>
-                My goal is to become a skilled developer and build
-                meaningful digital experiences.
+                I am interested in web development, programming and
+                learning new technologies. I enjoy creating creative
+                and user-friendly websites.
             </p>
 
-            <p class="about-highlight">
-                Always learning. Always creating. Always improving.
+            <p>
+                My goal is to improve my technical skills, gain practical
+                experience and become a successful developer.
             </p>
 
         </div>
 
     </section>
 
-    <!-- Skills Section -->
-    <section class="section" id="skills">
 
-        <p class="section-label">WHAT I CAN DO</p>
+    <!-- SKILLS SECTION -->
+    <section class="skills section" id="skills">
 
-        <h2 class="section-title">
-            My <span>Skills</span>
-        </h2>
+        <h2 class="section-title">My <span>Skills</span></h2>
 
-        <div class="skills-grid">
-
-            <div class="skill-card">
-                <div class="skill-icon">🌐</div>
-                <h3>HTML</h3>
-                <p>Building website structures</p>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">🎨</div>
-                <h3>CSS</h3>
-                <p>Designing beautiful layouts</p>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">💻</div>
-                <h3>Programming</h3>
-                <p>Learning programming fundamentals</p>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">🛠️</div>
-                <h3>Tools</h3>
-                <p>Visual Studio Code and GitHub</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-
-        <p class="section-label">LET'S CONNECT</p>
-
-        <h2 class="section-title">
-            Contact <span>Me</span>
-        </h2>
-
-        <p class="contact-text">
-            Have a project idea or an opportunity?
-            I'd love to hear from you!
+        <p class="section-description">
+            Here are some technologies and tools I am learning.
         </p>
 
-        <div class="contact-links">
+        <div class="skills-container">
 
-  <a  
-    href="mailto:gaikwadshruti237@gmail.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="btn btn-outline"
->
-    ✉ Email Me
-</a>
+            <div class="skill-card">
+                <i class="fab fa-html5"></i>
+                <h3>HTML</h3>
+                <p>Structure of websites</p>
+            </div>
 
-<a
-    href="https://www.linkedin.com/in/shruti416/"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="btn btn-outline"
->
-    LinkedIn
-</a>
+            <div class="skill-card">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS</h3>
+                <p>Website styling and design</p>
+            </div>
 
-<a
-    href="https://github.com/shrutii416"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="btn btn-outline"
->
-    GitHub
-</a>
+            <div class="skill-card">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Learning web interactivity</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
+                <p>Basic programming</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>C Programming</h3>
+                <p>Basic programming concepts</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>VS Code</h3>
+                <p>Code editor</p>
+            </div>
 
         </div>
 
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>Shruti Shrikant Gaikwad</p>
-        <p>© 2026 My Portfolio. All Rights Reserved.</p>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects section" id="projects">
+
+        <h2 class="section-title">My <span>Projects</span></h2>
+
+        <p class="section-description">
+            Here are some of my learning projects.
+        </p>
+
+        <div class="project-container">
+
+            <div class="project-card">
+
+                <i class="fas fa-globe project-icon"></i>
+
+                <h3>Personal Portfolio Website</h3>
+
+                <p>
+                    A personal portfolio website created using HTML and CSS
+                    to showcase my introduction, skills and projects.
+                </p>
+
+                <a href="https://github.com/shrutii416/my-portfolio"
+                   target="_blank" class="project-link">
+                    View Project <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section" id="contact">
+
+        <h2 class="section-title">Contact <span>Me</span></h2>
+
+        <p class="section-description">
+            Feel free to connect with me!
+        </p>
+
+        <div class="contact-container">
+
+            <a href="mailto:gaikwadshruti237@gmail.com"
+               class="contact-card">
+
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>Send me an email</p>
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/shruti416/"
+               target="_blank" class="contact-card">
+
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <p>Connect with me</p>
+
+            </a>
+
+            <a href="https://github.com/shrutii416"
+               target="_blank" class="contact-card">
+
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <p>Explore my projects</p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <p>
+            Made with <i class="fas fa-heart"></i> by Shruti Gaikwad
+        </p>
+
+        <p>© 2026 All Rights Reserved.</p>
+
     </footer>
 
 </body>
