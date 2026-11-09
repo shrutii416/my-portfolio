@@ -1,4 +1,3 @@
-
 /* BASIC SETTINGS */
 
 * {
@@ -526,4 +525,104 @@ body {
         transition: none;
     }
 
+}
+
+/* LIGHT MODE THEME */
+
+body.light-mode {
+    background-color: #f8f3ff;
+    color: #241735;
+}
+
+/* Navbar */
+body.light-mode .navbar {
+    background-color: #e9dafa;
+}
+
+body.light-mode .logo,
+body.light-mode .nav-links a,
+body.light-mode .menu-icon {
+    color: #241735;
+}
+
+body.light-mode .nav-links a:hover {
+    color: #9333ea;
+}
+
+/* Home Section */
+body.light-mode .home-content p,
+body.light-mode .section-description {
+    color: #59476c;
+}
+
+body.light-mode .welcome,
+body.light-mode .home-content h1 span,
+body.light-mode .home-content h2 {
+    color: #9333ea;
+}
+
+/* All Sections */
+body.light-mode .section {
+    background-color: #f0e7fa;
+}
+
+body.light-mode .section-title span {
+    color: #9333ea;
+}
+
+/* About Card */
+body.light-mode .about-content {
+    background-color: #ffffff;
+    border-color: #d8c2ed;
+}
+
+body.light-mode .about-content p {
+    color: #59476c;
+}
+
+/* Skill Cards */
+body.light-mode .skill-card,
+body.light-mode .project-card,
+body.light-mode .contact-card {
+    background-color: #ffffff;
+    border-color: #d8c2ed;
+    color: #241735;
+}
+
+body.light-mode .skill-card p,
+body.light-mode .project-card p,
+body.light-mode .contact-card p {
+    color: #59476c;
+}
+
+body.light-mode .skill-card i,
+body.light-mode .project-icon,
+body.light-mode .contact-card i {
+    color: #9333ea;
+}
+
+/* Links */
+body.light-mode .project-link {
+    color: #9333ea;
+}
+
+body.light-mode .contact-card:hover {
+    background-color: #e9dafa;
+    border-color: #9333ea;
+}
+
+/* Buttons */
+body.light-mode .btn {
+    background: linear-gradient(90deg, #9333ea, #db4baf);
+    color: white;
+}
+
+/* Footer */
+body.light-mode .footer {
+    background-color: #e9dafa;
+    color: #59476c;
+}
+
+body.light-mode .footer i {
+    color: #db2777;
 }
