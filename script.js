@@ -1,114 +1,110 @@
 
-// 1. MOBILE NAVIGATION MENU
+// Mobile Navigation
 const menuToggle = document.getElementById("menu-toggle");
+
 const navLinks = document.querySelectorAll(".nav-links a");
 
 navLinks.forEach(link => {
     link.addEventListener("click", () => {
-        if (menuToggle) {
-            menuToggle.checked = false;
-        }
+        menuToggle.checked = false;
     });
 });
 
 
-// 2. DARK / LIGHT MODE TOGGLE
-const navbar = document.querySelector(".navbar");
+// Dark / Light Mode
+const themeButton = document.createElement("button");
 
-if (navbar) {
-    const themeButton = document.createElement("button");
+themeButton.className = "theme-toggle";
 
-    themeButton.className = "theme-toggle";
-    themeButton.setAttribute("aria-label", "Toggle light and dark mode");
-    themeButton.setAttribute("type", "button");
+themeButton.innerHTML = '<i class="fas fa-moon"></i>';
 
-    themeButton.style.cssText = `
-        background: transparent;
-        border: 1px solid #c084fc;
-        color: #c084fc;
-        padding: 10px 13px;
-        border-radius: 50%;
-        font-size: 18px;
-        cursor: pointer;
-        margin-left: 15px;
-    `;
+themeButton.setAttribute("aria-label", "Toggle theme");
 
-    navbar.appendChild(themeButton);
+document.querySelector(".navbar").appendChild(themeButton);
 
-    function applyTheme(theme) {
-        document.body.classList.toggle("light-mode", theme === "light");
 
-        themeButton.innerHTML = theme === "light"
-            ? '<i class="fas fa-sun"></i>'
-            : '<i class="fas fa-moon"></i>';
+// Check Saved Theme
+const savedTheme = localStorage.getItem("portfolio-theme");
 
-        themeButton.setAttribute(
-            "aria-label",
-            theme === "light" ? "Switch to dark mode" : "Switch to light mode"
-        );
+if (savedTheme === "light") {
 
-        localStorage.setItem("theme", theme);
-    }
+    document.body.classList.add("light-mode");
 
-    // Load previously selected theme
-    const savedTheme = localStorage.getItem("theme") || "dark";
-    applyTheme(savedTheme);
+    themeButton.innerHTML = '<i class="fas fa-sun"></i>';
 
-    // Change theme on button click
-    themeButton.addEventListener("click", () => {
-        const currentTheme = document.body.classList.contains("light-mode")
-            ? "light"
-            : "dark";
-
-        applyTheme(currentTheme === "dark" ? "light" : "dark");
-    });
 }
 
 
-// 3. SCROLL ANIMATIONS
+// Change Theme
+themeButton.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    const isLightMode =
+        document.body.classList.contains("light-mode");
+
+    localStorage.setItem(
+        "portfolio-theme",
+        isLightMode ? "light" : "dark"
+    );
+
+    themeButton.innerHTML = isLightMode
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+
+});
+
+
+// Scroll Animation
 const revealElements = document.querySelectorAll(
-    ".home-content, .home-image, .about-content, .skill-card, .project-card, .contact-card"
+    ".home-content, .home-image, .about-content, .education-card, .skill-card, .project-card, .contact-card"
 );
 
-if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.15
-    });
+const observer = new IntersectionObserver((entries) => {
 
-    revealElements.forEach(element => {
-        element.classList.add("reveal");
-        observer.observe(element);
-    });
-} else {
-    revealElements.forEach(element => {
-        element.classList.add("show");
-    });
-}
+    entries.forEach(entry => {
 
+        if (entry.isIntersecting) {
 
-// 4. SMOOTH SCROLLING
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function (event) {
-        const targetId = this.getAttribute("href");
+            entry.target.classList.add("show");
 
-        if (targetId && targetId.length > 1) {
-            const targetSection = document.querySelector(targetId);
+            observer.unobserve(entry.target);
 
-            if (targetSection) {
-                event.preventDefault();
-
-                targetSection.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
         }
+
     });
+
+}, {
+    threshold: 0.15
 });
+
+revealElements.forEach(element => {
+    observer.observe(element);
+});
+
+
+// Smooth Scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function(event) {
+
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
+
+
+console.log("Portfolio website loaded successfully!");
